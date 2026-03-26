@@ -1,6 +1,6 @@
 ## todo
 
-- [ ] make it deploy (vercel)
+- [x] make it deploy (vercel)
 - [ ] scaffold basic ui
 - [ ] set up db (vercel postgress)
 - [ ] attach db to ui
