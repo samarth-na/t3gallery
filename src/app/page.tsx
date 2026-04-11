@@ -1,7 +1,7 @@
 // import { desc } from "drizzle-orm";
 import { Show, SignInButton } from '@clerk/nextjs';
 import { db } from '../server/db';
-import { useAuth } from '@clerk/nextjs';
+// import { useAuth } from '@clerk/nextjs';
 
 export const dynamic = 'force-dynamic';
 
@@ -10,12 +10,9 @@ async function Images() {
         orderBy: (model, { desc }) => desc(model.id),
     });
     return (
-        <div className="flex flex-wrap">
+        <div className="flex flex-wrap place-items-center justify-center gap-2 text-center">
             {[...posts, ...posts].map((image) => (
-                <div
-                    key={image.id}
-                    className="w-48 flex flex-col m-2 bg-green-50"
-                >
+                <div key={image.id} className="flex w-48 flex-col bg-green-50">
                     <img src={image.url} />
                     <div>{image.name}</div>
                 </div>
@@ -26,7 +23,7 @@ async function Images() {
 
 export default async function HomePage() {
     return (
-        <main className="">
+        <main className="mt-4 flex flex-col items-center justify-center gap-4 text-center">
             <div>hello gallery in work</div>
             <Show when="signed-in" fallback={<SignInButton />}>
                 <Images />
